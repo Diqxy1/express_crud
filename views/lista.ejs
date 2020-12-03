@@ -16,6 +16,7 @@
         <tr>
           <th class="m-titulo">Título</th>
           <th class="m-ano">Ano de lançamento</th>
+          <th colspan="2">Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +24,8 @@
           <tr>
             <td><%= item.titulo %></td>
             <td ><%= item.ano_lancamento %></td>
+            <td><a href="/edit/<%= item.id %>" class="btn btn-primary">Editar</a></td>
+            <td><a href="/delete/<%= item.id %>" class="btn btn-danger">Excluir</a></td>
           </tr>
         <% } %>
       </tbody>

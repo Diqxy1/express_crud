@@ -10,15 +10,19 @@
   </head>
   <body>
     <h1>Formulário</h1>
-    <form method="POST" action="/add">
+    <% if(filme.id){ %>
+        <form action="/edit/<%= filme.id %>" method="post">
+    <% }else{ %>
+        <form method="POST" action="/add">
+    <% } %>
         <div class="form-group">
           <label for="inputAddress">Título</label>
-          <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Informe o título do filme/série">
+          <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Informe o título do filme/série" value="<%= filme.titulo %>">
         </div>
         <div class="form-row">
           <div class="form-group col-md-2">
             <label for="inputZip">Ano de lançamento</label>
-            <input type="text" class="form-control" id="ano" name="ano">
+            <input type="text" class="form-control" id="ano" name="ano" value="<%= filme.ano_lancamento %>">
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
